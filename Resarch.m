@@ -1,20 +1,20 @@
 clear;
 con=0;
 count=7;
-fl=(string(count)+'/ResultData.txt');
+fl=('E:\Document\MATLAB\'+string(count)+'/ResultData.txt');
 opts2=detectImportOptions(fl,'Encoding','UTF-8','ReadVariableNames',false,'ExtraColumnsRule','wrap');% サンプルデータのデータ形式判定
 hdat2=readmatrix(fl, opts2,'Encoding','UTF-8'); % サンプルデータを表として読み込む
 ResultData=array2table(hdat2,'VariableNames',{'ID','SetNum','TarPos','SabPos1','SabPos2','Fro','Mid','Bott','c/f','Reaction'});
 
 
 %eyedata=["ID" , "x" , "y", "z", "time"];
-fl=(string(count)+'/EyeTracking/0.txt');
+fl=('E:\Document\MATLAB\'+string(count)+'/EyeTracking/0.txt');
 opts=detectImportOptions(fl); % サンプルデータのデータ形式判定
 EyeSpot=readmatrix(fl, opts);
 eyedata=EyeSpot;
-%zeroの読み込み
+%zeroの読み込みa
 for i=1:108
-    fl=(string(count)+'/EyeTracking/'+string(i)+'.txt');
+    fl=('E:\Document\MATLAB\'+string(count)+'/EyeTracking/'+string(i)+'.txt');
     opts=detectImportOptions(fl); % サンプルデータのデータ形式判定
     EyeSpot=readmatrix(fl, opts);% サンプルデータを表として読み込む
     response=double(eyedata(end,5))+table2array(ResultData(i,10));
