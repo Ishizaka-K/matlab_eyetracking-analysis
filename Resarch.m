@@ -31,6 +31,7 @@ for i=1:108
     eyedata=[eyedata;EyeSpot];
     disp(i);   
 end
+mean
 Eyedata=table(eyedata(:,1),eyedata(:,2),eyedata(:,3),eyedata(:,4),eyedata(:,5),...
                                                 'VariableNames',{'ID','x','y','z','time'});
 figure
