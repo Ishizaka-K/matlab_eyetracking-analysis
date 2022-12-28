@@ -3,15 +3,16 @@ count=8;
 %8+9のようにデータが連なってるので、8ではデータ下を消す
 %同様に9ではデータ上を消す
 for i=0:108
-    i=1;
     fl=('E:\Document\MATLAB\'+string(count)+'/EyeTracking/'+string(i)+'.txt');
     opts=detectImportOptions(fl); % サンプルデータのデータ形式判定
     EyeSpot=readmatrix(fl, opts);% サンプルデータを表として読み込む
-    con=1;
+    con=2;
     while 1
-        if EyeSpot(con,5)>EyeSpot(con+1,5)
+        if EyeSpot(con-1,5)>EyeSpot(con,5)
+            EyeSpot(con:end,:)=[];
+            writetable(EyeSpot,string(i)+'.txt');
            break;
-        elseif con+
+        elseif height(EyeSpot)==con+1
            break;
         else
         end
