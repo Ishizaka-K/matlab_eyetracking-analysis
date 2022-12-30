@@ -31,7 +31,6 @@ for i=1:108
     eyedata=[eyedata;EyeSpot];
     disp(i);   
 end
-mean
 Eyedata=table(eyedata(:,1),eyedata(:,2),eyedata(:,3),eyedata(:,4),eyedata(:,5),...
                                                 'VariableNames',{'ID','x','y','z','time'});
 figure
@@ -47,7 +46,7 @@ while 1
     elseif Eyedata.ID(con)==3
         [pks,locs] = findpeaks(Tracking.x);
         figure
-        plot(Tracking.x,Tracking.y)
+        plot(rotate([Tracking.x,Tracking.y],45,[0 0]))
         xlim([-1 1])
         ylim([-1 1]);
         clear Tracking;
