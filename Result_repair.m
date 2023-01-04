@@ -3,6 +3,7 @@ clear;
 count=1;
 fname='ResultData';
 %-----------
+disp(count);
 con=0;
 cou=1;
 counter=zeros;
@@ -97,4 +98,4 @@ else
     disp('異常なし');
 end
 ResultData=array2table(hdat2,'VariableNames',{'ID','SetNum','TarPos','SabPos1','SabPos2','Fro','Mid','Bott','c/f','Reaction'});
-writetable(ResultData,'E:\Document\MATLAB\'+string(count)+'/'+fname+'.xls');
+writetable(ResultData,'E:\Document\MATLAB\'+string(count)+'/'+fname+'.txt');
