@@ -132,70 +132,70 @@ end
 end
 mkdir('E:/Data/'+string(count))
 F_icchi(1,:)=[];
-F_icchi(25,2)=mean(F_icchi(:,2));
+F_i=5<F_icchi(:,3);
+F_icchi(F_i,:)=[];
 FRdata(count,1)=mean(F_icchi(:,2));
-F_icchi(25,3)=mean(F_icchi(:,3));
 FRcorrect(count,1)=mean(F_icchi(:,3));
 
 F_huicchi(1,:)=[];
-F_huicchi(25,2)=mean(F_huicchi(:,2));
+F_h=5<F_huicchi(:,3);
+F_huicchi(F_h,:)=[];
 FRdata(count,2)=mean(F_huicchi(:,2));
-F_huicchi(25,3)=mean(F_huicchi(:,3));
 FRcorrect(count,2)=mean(F_huicchi(:,3));
 
 F_no(1,:)=[];
-F_no(25,2)=mean(F_no(:,2));
+F_n=5<F_no(:,3);
+F_no(F_n,:)=[];
 FRdata(count,3)=mean(F_no(:,2));
-F_no(25,3)=mean(F_no(:,3));
 FRcorrect(count,3)=mean(F_no(:,3));
 
-FrontMat=horzcat(F_icchi,F_huicchi,F_no);
-FrontResult=array2table(FrontMat,'VariableNames',{'ID_Icchi','1c/f','1time','ID_Huicchi','2c/f','2time','ID_Nothinga','3c/f','3time'});
-writetable(FrontResult,'E:\Data\'+string(count)+'/Front.xls');
+%FrontMat=horzcat(F_icchi,F_huicchi,F_no);
+%FrontResult=array2table(FrontMat,'VariableNames',{'ID_Icchi','1c/f','1time','ID_Huicchi','2c/f','2time','ID_Nothinga','3c/f','3time'});
+%writetable(FrontResult,'E:\Data\'+string(count)+'/Front.xls');
 
 M_icchi(1,:)=[];
-M_icchi(25,2)=mean(M_icchi(:,2));
+M_i=5<M_icchi(:,3);
+M_icchi(M_i,:)=[];
 MRdata(count,1)=mean(M_icchi(:,2));
-M_icchi(25,3)=mean(M_icchi(:,3));
 MRcorrect(count,1)=mean(M_icchi(:,3));
 
 M_huicchi(1,:)=[];
-M_huicchi(25,2)=mean(M_huicchi(:,2));
+M_h=5<M_huicchi(:,3);
+M_huicchi(M_h,:)=[];
 MRdata(count,2)=mean(M_huicchi(:,2));
-M_huicchi(25,3)=mean(M_huicchi(:,3));
 MRcorrect(count,2)=mean(M_huicchi(:,3));
 
 M_no(1,:)=[];
-M_no(25,2)=mean(M_no(:,2));
+M_n=5<M_no(:,3);
+M_no(M_n,:)=[];
 MRdata(count,3)=mean(M_no(:,2));
-M_no(25,3)=mean(M_no(:,3));
 MRcorrect(count,3)=mean(M_no(:,3));
 
-MiddleMat=horzcat(M_icchi,M_huicchi,M_no);
-MiddleResult=array2table(MiddleMat,'VariableNames',{'ID_Icchi','1c/f','1time','ID_Huicchi','2c/f','2time','ID_Nothinga','3c/f','3time'});
-writetable(MiddleResult,'E:\Data\'+string(count)+'/Middle.xls');
+%MiddleMat=horzcat(M_icchi,M_huicchi,M_no);
+%MiddleResult=array2table(MiddleMat,'VariableNames',{'ID_Icchi','1c/f','1time','ID_Huicchi','2c/f','2time','ID_Nothinga','3c/f','3time'});
+%writetable(MiddleResult,'E:\Data\'+string(count)+'/Middle.xls');
 
 B_icchi(1,:)=[];
-B_icchi(25,2)=mean(B_icchi(:,2));
+B_i=5<B_icchi(:,3);
+B_icchi(B_i,:)=[];
 BRdata(count,1)=mean(B_icchi(:,2));
-B_icchi(25,3)=mean(B_icchi(:,3));
 BRcorrect(count,1)=mean(B_icchi(:,3));
 
 B_huicchi(1,:)=[];
-B_huicchi(25,2)=mean(B_huicchi(:,2));
+B_h=5<B_huicchi(:,3);
+B_huicchi(B_h,:)=[];
 BRdata(count,2)=mean(B_huicchi(:,2));
-B_huicchi(25,3)=mean(B_huicchi(:,3));
 BRcorrect(count,2)=mean(B_huicchi(:,3));
 
 B_no(1,:)=[];
-B_no(25,2)=mean(B_no(:,2));
+B_n=5<B_no(:,3);
+B_no(B_n,:)=[];
 BRdata(count,3)=mean(B_no(:,2));
-B_no(25,3)=mean(B_no(:,3));
 BRcorrect(count,3)=mean(B_no(:,3));
 
-BottomMat=horzcat(B_icchi,B_huicchi,B_no);
-BottomResult=array2table(BottomMat,'VariableNames',{'ID_Icchi','1c/f','1time','ID_Huicchi','2c/f','2time','ID_Nothinga','3c/f','3time'});
-writetable(BottomResult,'E:\Data\'+string(count)+'/Bottom.xls');
+%BottomMat=horzcat(B_icchi,B_huicchi,B_no);
+%BottomResult=array2table(BottomMat,'VariableNames',{'ID_Icchi','1c/f','1time','ID_Huicchi','2c/f','2time','ID_Nothinga','3c/f','3time'});
+%writetable(BottomResult,'E:\Data\'+string(count)+'/Bottom.xls');
 
 
 end
