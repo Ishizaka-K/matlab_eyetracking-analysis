@@ -33,6 +33,53 @@ for i=1:108
 end
 Eyedata=table(eyedata(:,1),eyedata(:,2),eyedata(:,3),eyedata(:,4),eyedata(:,5),...
                                                 'VariableNames',{'ID','x','y','z','time'});
+cou=1;
+co=1;
+c=1;
+cn=1;
+ti=1;
+while 1
+    if eyedata(cou,1)==0
+    spotdata(co,1)=eyedata(cou,2);
+    spotdata(co,2)=eyedata(cou,3);
+    spotdata(co,3)=eyedata(cou,4);
+    cou=cou+1;
+    co=co+1;
+    elseif eyedata(cou,1)~=0
+        xav=mean(spotdata(:,1));
+        yav=mean(spotdata(:,2));
+        sacker(c,1)=eyedata(cou,1);
+        sacker(c,2)=eyedata(cou,2)-xav;
+        sacker(c,3)=eyedata(cou,3)-yav;
+        xsacker(cn,ti)=eyedata(cou,2);
+        cou=cou+1;
+        cn=cn+1;
+        co=1;
+        c=c+1;
+        if eyedata(cou,1)==3
+            ti=ti+1;
+            cn=1;
+        end
+    end
+    if height(eyedata)==cou
+    break;
+    end
+end
+hazure=0;
+for i=1:108
+    itizi=findpeaks(xsacker(:,i),'MinPeakHeight',0.05,'MinPeakDistance',20,'MaxPeakWidth',1);
+    if isempty(itizi)
+        x(:,i)=0;
+        hazure=hazure+1;
+    else
+    x(:,i)=itizi(1,1);
+    end
+end
+                                            
+                                            
+                                            
+
+
 figure
 plot(Eyedata.x,Eyedata.y)
         xlim([-1 1])
