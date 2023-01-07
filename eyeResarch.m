@@ -51,7 +51,8 @@ while 1
         sacker(c,1)=eyedata(cou,1);
         sacker(c,2)=eyedata(cou,2)-xav;
         sacker(c,3)=eyedata(cou,3)-yav;
-        xsacker(cn,ti)=eyedata(cou,2);
+        xsacker(cn,ti)=eyedata(cou,2)-xav;
+        ysacker(cn,ti)=eyedata(cou,3)-yav;
         cou=cou+1;
         cn=cn+1;
         co=1;
@@ -67,7 +68,7 @@ while 1
 end
 hazure=0;
 for i=1:108
-    itizi=findpeaks(xsacker(:,i),'MinPeakHeight',0.05,'MinPeakDistance',20,'MaxPeakWidth',1);
+    [itizi,z]=findpeaks((xsacker(:,i).^2),'MinPeakHeight',0.015,'MinPeakDistance',20,'MaxPeakWidth',1);
     if isempty(itizi)
         x(:,i)=0;
         hazure=hazure+1;
