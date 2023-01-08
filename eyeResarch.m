@@ -217,14 +217,18 @@ end
 
 for i=1:108
 if hdat2(i,3)==0
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
-    b=[cos(deg2rad(25.57)), -sin(deg2rad(25.57));
-        sin(deg2rad(25.57)), cos(deg2rad(25.57))];
+    b=[2/sqrt(5), -1/sqrt(5);
+        1/sqrt(5), 2/sqrt(5)];
     c=b*a;
     Data(108+i,1)=0;
     Data(108+i,2)=c(1,1);
     Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==1
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
     b=[cos(deg2rad(90)), -sin(deg2rad(90));
         sin(deg2rad(90)), cos(deg2rad(90))];
@@ -233,22 +237,28 @@ elseif hdat2(i,3)==1
     Data(108+i,2)=c(1,1);
     Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==2
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
-    b=[cos(deg2rad(154.43)), -sin(deg2rad(154.43));
-        sin(deg2rad(154.43)), cos(deg2rad(154.43))];
+    b=[cos(deg2rad(90+63.434948822922)), -sin(deg2rad(90+63.434948822922));
+        sin(deg2rad(90+63.434948822922)), cos(deg2rad(90+63.434948822922))];
     c=b*a;
     Data(108+i,1)=2;
     Data(108+i,2)=c(1,1);
     Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==3
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
-    b=[cos(deg2rad(-154.43)), -sin(deg2rad(-154.43));
-        sin(deg2rad(-154.43)), cos(deg2rad(-154.43))];
+    b=[cos(deg2rad(-(90+63.434948822922))), -sin(deg2rad(-(90+63.434948822922)));
+        sin(deg2rad(-(90+63.434948822922))), cos(deg2rad(-(90+63.434948822922)))];
     c=b*a;
     Data(108+i,1)=3;
     Data(108+i,2)=c(1,1);
     Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==4
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
     b=[cos(deg2rad(-90)), -sin(deg2rad(-90));
         sin(deg2rad(-90)), cos(deg2rad(-90))];
@@ -257,9 +267,11 @@ elseif hdat2(i,3)==4
     Data(108+i,2)=c(1,1);
     Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==5
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
-    b=[cos(deg2rad(-25.57)), -sin(deg2rad(-25.57));
-        sin(deg2rad(-25.57)), cos(deg2rad(-25.57))];
+    b=[2/sqrt(5), 1/sqrt(5);
+       -1/sqrt(5), 2/sqrt(5)];
     c=b*a;
     Data(108+i,1)=5;
     Data(108+i,2)=c(1,1);
