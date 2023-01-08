@@ -31,7 +31,7 @@ for i=1:108
     else 
     end
 end
-
+disp(count);
 eData=array2table(hdat2,'VariableNames',{'TragetPosition','Xposition','Yposition','timig'});
 writetable(eData,'E:\Document\MATLAB\'+string(count)+'/eyeData.txt');
 end
