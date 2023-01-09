@@ -28,7 +28,6 @@ for i=1:108
         end
     end
     eyedata=[eyedata;EyeSpot];
-    disp(i);
 end
 Eyedata=table(eyedata(:,1),eyedata(:,2),eyedata(:,3),eyedata(:,4),eyedata(:,5),...
     'VariableNames',{'ID','x','y','z','time'});
@@ -166,7 +165,6 @@ for i=1:108
         end
     end
     eyedata=[eyedata;EyeSpot];
-    disp(i);
 end
 Eyedata=table(eyedata(:,1),eyedata(:,2),eyedata(:,3),eyedata(:,4),eyedata(:,5),...
     'VariableNames',{'ID','x','y','z','time'});
@@ -203,7 +201,7 @@ while 1
     cou=cou+1;
 end
 for i=1:108
-    [itizi,z]=findpeaks((xsacker(:,i).^2),'MinPeakHeight',0.015,'MinPeakDistance',20,'MaxPeakWidth',1);
+    [itizi,z]=findpeaks((xsacker(:,i).^2),'MinPeakWidth',5,'MinPeakDistance',5);
     if isempty(itizi)
         timingdata(108+i,1)=0;
         x(i,1:2)=0;
@@ -286,7 +284,7 @@ figure
 scatter(Data(:,2),Data(:,3))
 xlim([-1 1])
 ylim([-1 1]);
-
+disp(count);
 eData=array2table(Data,'VariableNames',{'TragetPosition','Xposition','Yposition','timig'});
 writetable(eData,'E:\Document\MATLAB\'+string(count)+'/eyeData.txt');
 clear;
