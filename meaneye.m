@@ -7,6 +7,8 @@ opts2=detectImportOptions(fl,'Encoding','UTF-8','ReadVariableNames',false,'Extra
 hdat2=readmatrix(fl, opts2,'Encoding','UTF-8'); % サンプルデータを表として読み込む
 zerdata=find(hdat2(:,4)==0);
 hdat2(zerdata,:)=[];
+zerdata=find(hdat2(:,2)==0);
+hdat2(zerdata,:)=[];
 data=hdat2;
 svdata=[svdata;data];
 avdata(count,1)=mean(data(:,2));
@@ -15,9 +17,9 @@ end
 svdata(1,:)=[];
 svdata(end+1,1)=mean(svdata(:,4));
 figure
-scatter(avdata(:,1),avdata(:,2))
-xlim([-0.1 0.1])
-ylim([-0.1 0.1]);
+scatter(avdata(:,1),avdata(:,2),'filled')
+xlim([-0.5 0.5])
+ylim([-0.5 0.5]);
 
 avsa=array2table(avdata,'VariableNames',{'Xposition','Yposition'});
 writetable(avsa,'E:\Document\MATLAB\AverageEyeData.xls');
@@ -52,6 +54,28 @@ for j=1:height(svdata)
     data5=[data5;svdata(j,:)];
     end
 end
+data0(1,:)=[];
+data1(1,:)=[];
+data2(1,:)=[];
+data3(1,:)=[];
+data4(1,:)=[];
+data5(1,:)=[];
+alavdata(1,:)=[0,mean(data0(:,2)),mean(data0(:,3))];
+alavdata(2,:)=[1,mean(data1(:,2)),mean(data0(:,3))];
+alavdata(3,:)=[2,mean(data2(:,2)),mean(data0(:,3))];
+alavdata(4,:)=[3,mean(data3(:,2)),mean(data3(:,3))];
+alavdata(5,:)=[4,mean(data4(:,2)),mean(data4(:,3))];
+alavdata(6,:)=[5,mean(data5(:,2)),mean(data5(:,3))];
+
+alData=array2table(alavdata,'VariableNames',{'ID','X','Y'});
+writetable(alData,'E:\Document\MATLAB\AllaverageData.xls');
+
+
+figure
+scatter(alavdata(:,1),alavdata(:,2))
+xlim([-0.5 0.5])
+ylim([-0.5 0.5]);
+
 figure
 scatter(data0(:,2),data0(:,3))
 xlim([-0.5 0.5])
