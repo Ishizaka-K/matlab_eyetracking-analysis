@@ -66,7 +66,7 @@ while 1
 end
 hazure=0;
 for i=1:108
-    [itizi,z]=findpeaks((xsacker(:,i).^2),'MinPeakHeight',0.015,'MinPeakDistance',20,'MaxPeakWidth',1);
+    [itizi,z]=findpeaks(abs(xsacker(:,20).*100),'MinPeakDistance',100,'MinPeakHeight',1);
     if isempty(itizi)
         x(i,1:2)=0;
         timingdata(i,1)=0;
@@ -79,53 +79,65 @@ for i=1:108
 end
 for i=1:108
 if hdat2(i,3)==0
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
-    b=[cos(deg2rad(25.57)), -sin(deg2rad(25.57));
-        sin(deg2rad(25.57)), cos(deg2rad(25.57))];
+    b=[2/sqrt(5), -1/sqrt(5);
+        1/sqrt(5), 2/sqrt(5)];
     c=b*a;
-    Data(i,1)=0;
-    Data(i,2)=c(1,1);
-    Data(i,3)=c(2,1);
+    Data(108+i,1)=0;
+    Data(108+i,2)=c(1,1);
+    Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==1
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
     b=[cos(deg2rad(90)), -sin(deg2rad(90));
         sin(deg2rad(90)), cos(deg2rad(90))];
     c=b*a;
-    Data(i,1)=1;
-    Data(i,2)=c(1,1);
-    Data(i,3)=c(2,1);
+    Data(108+i,1)=1;
+    Data(108+i,2)=c(1,1);
+    Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==2
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
-    b=[cos(deg2rad(154.43)), -sin(deg2rad(154.43));
-        sin(deg2rad(154.43)), cos(deg2rad(154.43))];
+    b=[cos(deg2rad(90+63.434948822922)), -sin(deg2rad(90+63.434948822922));
+        sin(deg2rad(90+63.434948822922)), cos(deg2rad(90+63.434948822922))];
     c=b*a;
-    Data(i,1)=2;
-    Data(i,2)=c(1,1);
-    Data(i,3)=c(2,1);
+    Data(108+i,1)=2;
+    Data(108+i,2)=c(1,1);
+    Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==3
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
-    b=[cos(deg2rad(-154.43)), -sin(deg2rad(-154.43));
-        sin(deg2rad(-154.43)), cos(deg2rad(-154.43))];
+    b=[cos(deg2rad(-(90+63.434948822922))), -sin(deg2rad(-(90+63.434948822922)));
+        sin(deg2rad(-(90+63.434948822922))), cos(deg2rad(-(90+63.434948822922)))];
     c=b*a;
-    Data(i,1)=3;
-    Data(i,2)=c(1,1);
-    Data(i,3)=c(2,1);
+    Data(108+i,1)=3;
+    Data(108+i,2)=c(1,1);
+    Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==4
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
     b=[cos(deg2rad(-90)), -sin(deg2rad(-90));
         sin(deg2rad(-90)), cos(deg2rad(-90))];
     c=b*a;
-    Data(i,1)=4;
-    Data(i,2)=c(1,1);
-    Data(i,3)=c(2,1);
+    Data(108+i,1)=4;
+    Data(108+i,2)=c(1,1);
+    Data(108+i,3)=c(2,1);
 elseif hdat2(i,3)==5
+%     Data(108+i,2)=x(i,1);
+%     Data(108+i,3)=x(i,2);
     a=[x(i,1);x(i,2);];
-    b=[cos(deg2rad(-25.57)), -sin(deg2rad(-25.57));
-        sin(deg2rad(-25.57)), cos(deg2rad(-25.57))];
+    b=[2/sqrt(5), 1/sqrt(5);
+       -1/sqrt(5), 2/sqrt(5)];
     c=b*a;
-    Data(i,1)=5;
-    Data(i,2)=c(1,1);
-    Data(i,3)=c(2,1);
+    Data(108+i,1)=5;
+    Data(108+i,2)=c(1,1);
+    Data(108+i,3)=c(2,1);
 end
 end
 
@@ -201,7 +213,7 @@ while 1
     cou=cou+1;
 end
 for i=1:108
-    [itizi,z]=findpeaks((xsacker(:,i).^2),'MinPeakWidth',5,'MinPeakDistance',5);
+    [itizi,z]=findpeaks(abs(xsacker(:,20).*100),'MinPeakDistance',100,'MinPeakHeight',1);
     if isempty(itizi)
         timingdata(108+i,1)=0;
         x(i,1:2)=0;
