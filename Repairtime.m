@@ -1,11 +1,7 @@
 clear;
 for count=1:14
 
-fl=('E:\Document\MATLAB\'+string(count)+'/eyeData.txt');
-opts2=detectImportOptions(fl,'Encoding','UTF-8','ReadVariableNames',false,'ExtraColumnsRule','wrap');% サンプルデータのデータ形式判定
-hdat2=readmatrix(fl, opts2,'Encoding','UTF-8'); % サンプルデータを表として読み込む
-
-
+hdat2=xlsread('E:\Document\Asoturon\EyeSacker\'+string(count)+'EyeSacker.csv');
 %zeroの読み込みa
 for i=1:108
     fl=('E:\Document\MATLAB\'+string(count)+'/EyeTracking/'+string(i)+'.txt');
@@ -31,7 +27,10 @@ for i=1:108
     else 
     end
 end
+
+
 disp(count);
-eData=array2table(hdat2,'VariableNames',{'TragetPosition','Xposition','Yposition','timig'});
-writetable(eData,'E:\Document\MATLAB\'+string(count)+'/eyeData.txt');
+eData=array2table(hdat2,'VariableNames',{'Traget','Xposition','Yposition','timig'});
+writetable(eData,'E:\Document\Asoturon\EyeSacker\'+string(count)+'EyeSacker.csv');
+clear;
 end
