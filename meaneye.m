@@ -1,10 +1,7 @@
 clear;
 svdata=[0,0,0,0];
 for count=1:14
-
-fl=('E:\Document\MATLAB\'+string(count)+'/eyeData.txt');
-opts2=detectImportOptions(fl,'Encoding','UTF-8','ReadVariableNames',false,'ExtraColumnsRule','wrap');% サンプルデータのデータ形式判定
-hdat2=readmatrix(fl, opts2,'Encoding','UTF-8'); % サンプルデータを表として読み込む
+hdat2=xlsread('E:\Document\Asoturon\EyeSacker\'+string(count)+'EyeSacker.csv'); % サンプルデータを表として読み込む
 zerdata=find(hdat2(:,4)==0);
 hdat2(zerdata,:)=[];
 zerdata=find(hdat2(:,2)==0);
@@ -22,7 +19,7 @@ xlim([-0.5 0.5])
 ylim([-0.5 0.5]);
 
 avsa=array2table(avdata,'VariableNames',{'Xposition','Yposition'});
-writetable(avsa,'E:\Document\MATLAB\AverageEyeData.xls');
+writetable(avsa,'E:\Document\MATLAB\AverageEyeData.csv');
 
 figure
 scatter(svdata(1:(end-1),2),svdata(1:(end-1),3))
@@ -30,7 +27,7 @@ xlim([-0.5 0.5])
 ylim([-0.5 0.5]);
 
 eData=array2table(svdata,'VariableNames',{'TragetPosition','Xposition','Yposition','time'});
-writetable(eData,'E:\Document\MATLAB\AllEyeData.xls');
+writetable(eData,'E:\Document\MATLAB\AllEyeData.csv');
 
 svdata(:,4)=[];
 data0=[0,0,0];
@@ -68,11 +65,11 @@ alavdata(5,:)=[4,mean(data4(:,2)),mean(data4(:,3))];
 alavdata(6,:)=[5,mean(data5(:,2)),mean(data5(:,3))];
 
 alData=array2table(alavdata,'VariableNames',{'ID','X','Y'});
-writetable(alData,'E:\Document\MATLAB\AllaverageData.xls');
+writetable(alData,'E:\Document\MATLAB\AllaverageData.csv');
 
 
 figure
-scatter(alavdata(:,1),alavdata(:,2))
+scatter(alavdata(:,2),alavdata(:,3))
 xlim([-0.5 0.5])
 ylim([-0.5 0.5]);
 
