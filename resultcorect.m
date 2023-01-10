@@ -199,17 +199,17 @@ BRcorrect(count,3)=mean(B_no(:,3));
 
 
 end
-FRd=array2table(FRdata,'VariableNames',{'Icchi','Huicchi','No'});
-writetable(FRd,'E:\Data\FrontCorrect.xls');
-FRc=array2table(FRcorrect,'VariableNames',{'Icchi','Huicchi','No'});
-writetable(FRc,'E:\Data\FrontTime.xls');
-
-MRd=array2table(MRdata,'VariableNames',{'Icchi','Huicchi','No'});
-writetable(MRd,'E:\Data\MiddleCorrect.xls');
-MRc=array2table(MRcorrect,'VariableNames',{'Icchi','Huicchi','No'});
-writetable(MRc,'E:\Data\MiddleTime.xls');
-
-BRd=array2table(BRdata,'VariableNames',{'Icchi','Huicchi','No'});
-writetable(BRd,'E:\Data\BttomCorrect.xls');
-BRc=array2table(BRcorrect,'VariableNames',{'Icchi','Huicchi','No'});
-writetable(BRc,'E:\Data\BttomTime.xls');
+% FRd=array2table(FRdata,'VariableNames',{'Icchi','Huicchi','No'});
+% writetable(FRd,'E:\Data\FrontCorrect.xls');
+% FRc=array2table(FRcorrect,'VariableNames',{'Icchi','Huicchi','No'});
+% writetable(FRc,'E:\Data\FrontTime.xls');
+% 
+% MRd=array2table(MRdata,'VariableNames',{'Icchi','Huicchi','No'});
+% writetable(MRd,'E:\Data\MiddleCorrect.xls');
+% MRc=array2table(MRcorrect,'VariableNames',{'Icchi','Huicchi','No'});
+% writetable(MRc,'E:\Data\MiddleTime.xls');
+% 
+% BRd=array2table(BRdata,'VariableNames',{'Icchi','Huicchi','No'});
+% writetable(BRd,'E:\Data\BttomCorrect.xls');
+% BRc=array2table(BRcorrect,'VariableNames',{'Icchi','Huicchi','No'});
+% writetable(BRc,'E:\Data\BttomTime.xls');
