@@ -38,7 +38,7 @@ while 1
 end
 hazure=0;
 for i=1:108
-    [itizi,z]=findpeaks(abs(xsacker(:,i).*100),'MinPeakDistance',10,'MinPeakHeight',1);
+    [itizi,z]=findpeaks(abs(xsacker(:,i).*100),'MinPeakDistance',10);
     if isempty(itizi)
         x(i,1:2)=0;
         timingdata(i,1)=0;
@@ -153,7 +153,7 @@ while 1
     cou=cou+1;
 end
 for i=1:108
-    [itizi,z]=findpeaks(abs(xsacker(:,i).*100),'MinPeakDistance',10,'MinPeakHeight',1);
+    [itizi,z]=findpeaks(abs(xsacker(:,i).*100),'MinPeakDistance',10);
     if isempty(itizi)
         timingdata(108+i,1)=0;
         x(i,1:2)=0;
