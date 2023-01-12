@@ -30,7 +30,7 @@ end
 
 
 disp(count);
-eData=array2table(hdat2,'VariableNames',{'Traget','Xposition','Yposition','timig'});
+eData=array2table(hdat2,'VariableNames',{'Traget','Xposition','Yposition','timig','depth'});
 writetable(eData,'E:\Document\Asoturon\EyeSacker\'+string(count)+'EyeSacker.csv');
 clear;
 end
