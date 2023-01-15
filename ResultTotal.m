@@ -12,7 +12,8 @@ data0=zeros(1,10);
 data1=zeros(1,10);
 data2=zeros(1,10);
 hdat3=[0,0,0,0,0,0,0,0,0,0;hdat3];
-
+disp(hdat3(hdat3(:,10)>5,:));
+hdat3(hdat3(:,10)>5,:)=[];
 for j=1:height(hdat3)
     if hdat3(j,5)==1
     data0=[data0;hdat3(j,:)];
@@ -24,32 +25,32 @@ for j=1:height(hdat3)
 end
 
 %F_icchi
-icchi(count,1)=mean(data0(data0(:,2)==0|data0(:,2)==1,9));
+icchi(count,1)=mean(data0(data0(:,2)==0|data0(:,2)==1,10));
 %F_hui
-hui(count,1)=mean(data0(data0(:,2)==2|data0(:,2)==3,9));
+hui(count,1)=mean(data0(data0(:,2)==2|data0(:,2)==3,10));
 %F_no
-no(count,1)=mean(data0(data0(:,2)==4|data0(:,2)==5,9));
+no(count,1)=mean(data0(data0(:,2)==4|data0(:,2)==5,10));
 
 %M_icchi
-icchi(count,2)=mean(data1(data1(:,2)==7|data1(:,2)==8,9));
+icchi(count,2)=mean(data1(data1(:,2)==7|data1(:,2)==8,10));
 %M_hui
-hui(count,2)=mean(data1(data1(:,2)==6|data1(:,2)==9,9));
+hui(count,2)=mean(data1(data1(:,2)==6|data1(:,2)==9,10));
 %M_no
-no(count,2)=mean(data1(data1(:,2)==10|data1(:,2)==11,9));
+no(count,2)=mean(data1(data1(:,2)==10|data1(:,2)==11,10));
 
 %B_icchi
-icchi(count,3)=mean(data2(data2(:,2)==14|data2(:,2)==15,9));
+icchi(count,3)=mean(data2(data2(:,2)==14|data2(:,2)==15,10));
 %B_hui
-hui(count,3)=mean(data2(data2(:,2)==12|data2(:,2)==13,9));
+hui(count,3)=mean(data2(data2(:,2)==12|data2(:,2)==13,10));
 %B_no
-no(count,3)=mean(data2(data2(:,2)==16|data2(:,2)==17,9));
+no(count,3)=mean(data2(data2(:,2)==16|data2(:,2)==17,10));
 
 clear hdat3 data0 data1 data2;
 end
 total=[icchi,hui,no];
 TotalR=array2table(total,'VariableNames',{'F_icchi','M_icchi','B_icchi','F_hui','M_hui','B_hui', ...
     'F_no','M_no','B_no'});
-writetable(TotalR,'E:\Document\Asoturon\TotalCorrect.csv');
+writetable(TotalR,'E:\Document\Asoturon\TotalVariable.csv');
 
 
 
