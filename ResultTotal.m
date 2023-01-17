@@ -14,6 +14,11 @@ data2=zeros(1,10);
 hdat3=[0,0,0,0,0,0,0,0,0,0;hdat3];
 disp(hdat3(hdat3(:,10)>5,:));
 hdat3(hdat3(:,10)>5,:)=[];
+hdat3((hdat3(:,9)==0),:)=[];
+
+
+
+
 for j=1:height(hdat3)
     if hdat3(j,5)==1
     data0=[data0;hdat3(j,:)];
@@ -50,7 +55,7 @@ end
 total=[icchi,hui,no];
 TotalR=array2table(total,'VariableNames',{'F_icchi','M_icchi','B_icchi','F_hui','M_hui','B_hui', ...
     'F_no','M_no','B_no'});
-writetable(TotalR,'E:\Document\Asoturon\TotalVariable.csv');
+writetable(TotalR,'E:\Document\Asoturon\TotalVariable2.csv');
 
 
 
