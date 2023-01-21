@@ -48,8 +48,18 @@ end
 data0(1,:)=[];
 data1(1,:)=[];
 data2(1,:)=[];
+<<<<<<< Updated upstream
 Spotdata1=data0(data0(:,7)==0|data0(:,7)==1,:);
 Spotdata2=data0(data0(:,7)==2|data0(:,7)==3,:);
+=======
+<<<<<<< Updated upstream
+=======
+Spotdata1=mean(data1(data1(:,7)==6,4));
+Spotdata2=mean(data1(data1(:,7)==9,4));
+Spotdata3=mean(data2(data2(:,7)==12,4));
+Spotdata4=mean(data2(data2(:,7)==13,4));
+result=[Spotdata1,Spotdata2;Spotdata3,Spotdata4];
+>>>>>>> Stashed changes
 Spotdata3=data0(data0(:,7)==4|data0(:,7)==5,:);
 figure
 scatter(Spotdata1(:,2),Spotdata1(:,3))
@@ -69,6 +79,10 @@ ylim([-0.5 0.5]);
 
 
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 alavdata(2,:)=[1,mean(data1(:,2)),mean(data0(:,3))];
 alavdata(3,:)=[2,mean(data2(:,2)),mean(data0(:,3))];
 
